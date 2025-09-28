@@ -1,0 +1,124 @@
+:root{--accent:#2b7a78;--muted:#6b6b6b}
+*{box-sizing:border-box;font-family:Inter,system-ui,Arial;}
+body{margin:0;background:#f7f7f8;color:#111}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:var(--accent);color:#fff}
+.layout{display:flex;min-height:calc(100vh - 56px)}
+.sidebar{width:220px;padding:20px;background:#fff;border-right:1px solid #e6e6e6}
+.main{flex:1;padding:20px}
+.banner{padding:14px;background:#fff;margin-bottom:16px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,0.05)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:#fff;padding:16px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+@media (max-width:900px){.cards{grid-template-columns:repeat(2,1fr)}.sidebar{display:none}}
+@media (max-width:480px){.cards{grid-template-columns:1fr}.topbar{padding:10px}}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4fdf7;
+  color: #333;
+}
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  background: #1c6758;
+  color: #fff;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.sidebar.collapsed {
+  transform: translateX(-100%);
+}
+
+.sidebar h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar ul li i {
+  width: 20px;
+  text-align: center;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: #3d8361;
+  color: #fff;
+}
+
+.searchbar input {
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: none;
+  width: 200px;
+}
+
+.cards {
+  flex: 1;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.role-toggle {
+  padding: 8px 12px;
+  background: #1c6758;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+@media(max-width:768px) {
+  .sidebar {
+    position: absolute;
+    height: 100%;
+    z-index: 10;
+  }
+
+  .menu-toggle {
+    display: block;
+    color: #fff;
+  }
+}
